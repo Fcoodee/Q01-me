@@ -897,7 +897,7 @@ function renderCerts(){
         ${c.meta ? `<span class="meta">${c.meta}</span>` : ''}
       </div>
       ${(c.file || c.driveLink)
-        ? `<button class="view-btn" onclick="openCert('${c.file||''}','${c.type||''}', ${JSON.stringify(c.title)}, '${c.driveLink||''}')">View ↗</button>`
+        ? `<button class="view-btn" data-file="${c.file||''}" data-type="${c.type||''}" data-title="${(c.title||'').replace(/"/g,'&quot;')}" data-drivelink="${c.driveLink||''}" onclick="openCertFromBtn(this)">View ↗</button>`
         : `<button class="view-btn pending" title="Certificate file not uploaded yet">Pending</button>`}
     </div>`).join('');
   noResults.style.display = filtered.length ? 'none' : 'block';
@@ -910,7 +910,7 @@ function achvCard(a){
     <div style="display:flex; align-items:center; gap:8px; margin-top:8px; flex-wrap:wrap;">
       ${a.b?`<span class="badge">${a.b}</span>`:''}
       ${(a.file || a.driveLink)
-        ? `<button class="view-btn" onclick="openCert('${a.file||''}','${a.type||''}', ${JSON.stringify(a.h)}, '${a.driveLink||''}')">View Certificate ↗</button>`
+        ? `<button class="view-btn" data-file="${a.file||''}" data-type="${a.type||''}" data-title="${(a.h||'').replace(/"/g,'&quot;')}" data-drivelink="${a.driveLink||''}" onclick="openCertFromBtn(this)">View Certificate ↗</button>`
         : ''}
       ${a.projectUrl
         ? `<a class="view-btn" href="${a.projectUrl}" target="_blank" rel="noopener" style="text-decoration:none; display:inline-block;">View Project ↗</a>`
@@ -936,6 +936,14 @@ projects.forEach(a=>{ projGrid.innerHTML += achvCard(a); });
 // preserved below (openCertReal) so a certificate opens automatically once
 // the visitor is verified.
 let __pdplPending = null;
+
+function openCertFromBtn(btn){
+  const file = btn.dataset.file || '';
+  const type = btn.dataset.type || '';
+  const title = (btn.dataset.title || '').replace(/&quot;/g, '"');
+  const driveLink = btn.dataset.drivelink || '';
+  openCert(file, type, title, driveLink);
+}
 
 function openCert(file, type, title, driveLink){
   __pdplPending = { file, type, title, driveLink };
