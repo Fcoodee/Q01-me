@@ -373,33 +373,58 @@
 
   /* ===== CAROUSEL ===== */
   .carousel-wrap{display:flex; align-items:center; gap:12px;}
+  .gal-badge-row{display:flex; justify-content:flex-end; margin-bottom:8px;}
+  .gal-badge{
+    background:rgba(217,165,74,.12); color:#D9A54A; font-size:11px; font-weight:700;
+    padding:6px 14px; border-radius:100px; display:inline-flex; align-items:center; gap:6px;
+  }
   .gal-card{
-    display:flex; height:280px; border:1px solid var(--line); border-radius:16px;
-    overflow:hidden; background:var(--card);
+    display:flex; min-height:280px; border-radius:20px; overflow:hidden;
+    background:linear-gradient(135deg, #0B2A4A 0%, #132C46 60%, #0E3352 100%);
+    box-shadow:0 20px 45px rgba(11,42,74,.35);
   }
   .gal-photo-panel{
-    flex:0 0 42%; height:100%; position:relative; overflow:hidden;
-    background:linear-gradient(135deg, rgba(0,102,131,.06), rgba(244,135,0,.06));
-    display:flex; align-items:center; justify-content:center; flex-direction:column; gap:8px;
-    color:#B9C2C8; font-size:12px; text-align:center; border-right:1px dashed var(--line);
+    flex:0 0 38%; display:flex; align-items:center; justify-content:center;
+    padding:20px; color:rgba(255,255,255,.35); font-size:12px; text-align:center; flex-direction:column; gap:8px;
   }
-  .gal-photo-panel.has-image{padding:0; color:transparent; border-right:none;}
+  .gal-photo-inner{
+    width:100%; height:100%; border-radius:16px; overflow:hidden; position:relative;
+    background:rgba(255,255,255,.04); display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+  }
   .gal-photo-panel img{
-    width:100%; height:100%; object-fit:cover; display:block; position:absolute; inset:0;
+    width:100%; height:100%; object-fit:cover; display:block;
     opacity:0; transition:opacity .5s ease;
   }
   .gal-photo-panel img.show{opacity:1;}
-  .gal-photo-panel .ph-icon{font-size:30px; opacity:.5;}
+  .gal-photo-panel .ph-icon{font-size:28px; opacity:.6;}
   .gal-text-panel{
-    flex:1; padding:24px 28px; display:flex; flex-direction:column; justify-content:center; gap:10px;
+    flex:1; padding:30px 34px; display:flex; flex-direction:column; justify-content:center; gap:12px;
     position:relative; overflow:hidden;
   }
-  .gal-text-panel.fading h4, .gal-text-panel.fading p{opacity:0;}
-  .gal-text-panel h4, .gal-text-panel p{transition:opacity .3s ease;}
-  .gal-text-panel h4{margin:0; color:var(--navy); font-size:17px; line-height:1.35;}
-  .gal-text-panel p{margin:0; color:var(--muted); font-size:13.5px; line-height:1.7;}
-  @media (max-width:900px){ .gal-card{flex-direction:column; height:auto; min-height:380px;} .gal-photo-panel{border-right:none; border-bottom:1px dashed var(--line); flex:0 0 200px;} }
-  @media print{ .gal-card{height:auto;} }
+  .gal-text-panel.fading .gal-fade{opacity:0;}
+  .gal-fade{transition:opacity .3s ease;}
+  .gal-eyebrow{
+    display:inline-flex; align-items:center; gap:7px; align-self:flex-start;
+    background:rgba(255,255,255,.08); color:#7FD9C4; font-size:11px; font-weight:700;
+    letter-spacing:.4px; padding:5px 12px; border-radius:100px;
+  }
+  .gal-eyebrow .dot{width:6px; height:6px; border-radius:50%; background:#D9A54A;}
+  .gal-text-panel h4{margin:0; color:#fff; font-size:21px; font-weight:800; line-height:1.35;}
+  .gal-text-panel p{margin:0; color:#B9C7D0; font-size:13.5px; line-height:1.75; max-width:520px;}
+  .gal-cta{
+    align-self:flex-start; margin-top:6px; background:#D9A54A; color:#0B2A4A !important;
+    font-weight:800; font-size:12.5px; padding:9px 18px; border-radius:100px;
+    text-decoration:none; display:inline-flex; align-items:center; gap:8px;
+  }
+  .gal-cta:hover{background:#E8B961;}
+  .gal-tags{display:flex; gap:8px; margin-top:14px; flex-wrap:wrap;}
+  .gal-tag{
+    background:rgba(255,255,255,.06); color:rgba(255,255,255,.65); font-size:10.5px;
+    padding:5px 10px; border-radius:100px; border:1px solid rgba(255,255,255,.1);
+  }
+  @media (max-width:900px){ .gal-card{flex-direction:column;} .gal-photo-panel{flex:0 0 180px; width:100%;} }
+  @media print{ .gal-card{background:#0B2A4A !important; -webkit-print-color-adjust:exact; print-color-adjust:exact;} }
 
   a:focus-visible, button:focus-visible{outline:3px solid var(--gold); outline-offset:2px;}
 
@@ -456,7 +481,7 @@
 
   <div class="stat-row">
     <div class="stat"><b>15+</b><span>YEARS EXP.</span></div>
-    <div class="stat"><b>68+</b><span>CONT. PROF.<br>DEVELOPMENT</span></div>
+    <div class="stat"><b>90+</b><span>CONT. PROF.<br>DEVELOPMENT</span></div>
     <div class="stat"><b>10+</b><span>ROLES</span></div>
   </div>
 
@@ -525,6 +550,7 @@
       <div class="eval-year-head">
         <h3>Academic Year 2025/2026 <span class="eval-year-tag">Quarterly — In Progress</span></h3>
         <div class="eval-quarters" id="evalQuarters"></div>
+        <a href="https://drive.google.com/drive/folders/1V-nIFos2qF4ETOZOZAKLXL4zruLLTd7o" target="_blank" rel="noopener" class="view-btn" style="text-decoration:none; display:inline-block; margin-top:10px;">View Official HR Evaluations ↗</a>
       </div>
       <div class="eval-radar-wrap">
         <div class="eval-bars" id="evalBars2526"></div>
@@ -559,6 +585,7 @@
           </div>
         </div>
       </div>
+      <a href="https://drive.google.com/drive/folders/1_k8dDdNQwN0TNbp57ywDVPe-crFW0EAS" target="_blank" rel="noopener" class="view-btn" style="text-decoration:none; display:inline-block; margin-top:10px;">View Official HR Evaluation ↗</a>
     </div>
   </section>
 
@@ -586,16 +613,24 @@
   </section>
 
   <section id="gallery">
+    <div class="gal-badge-row"><span class="gal-badge">✦ Portfolio Highlights</span></div>
     <h2>Project &amp; Achievement Gallery</h2>
-    <p class="eval-intro">Photos and project highlights rotate independently.</p>
     <div class="gal-card">
       <div class="gal-photo-panel" id="galPhotoPanel">
-        <span class="ph-icon">🖼️</span><span>Photo coming soon<br>(placeholder slot)</span>
+        <div class="gal-photo-inner" id="galPhotoInner">
+          <span class="ph-icon">🖼️</span>
+        </div>
       </div>
       <div class="gal-text-panel" id="galTextPanel">
-        <h4 id="galTitle"></h4>
-        <p id="galCaption"></p>
-        <a id="galLink" href="#" target="_blank" rel="noopener" class="view-btn" style="text-decoration:none; display:none; align-self:flex-start;">View ↗</a>
+        <span class="gal-eyebrow gal-fade" id="galTag"><span class="dot"></span><span id="galTagText">Highlight</span></span>
+        <h4 class="gal-fade" id="galTitle"></h4>
+        <p class="gal-fade" id="galCaption"></p>
+        <a id="galLink" href="#" target="_blank" rel="noopener" class="gal-cta gal-fade" style="display:none;">View ↗</a>
+        <div class="gal-tags">
+          <span class="gal-tag">#Fahad_ALsufyani</span>
+          <span class="gal-tag">#CS_and_AI_Educator</span>
+          <span class="gal-tag">#Dar_ALforsan</span>
+        </div>
       </div>
     </div>
   </section>
@@ -737,12 +772,12 @@ const certifications = [
   {cat:"AI & Data", title:"Classera Persona: AI Specialization Session", meta:"2023", driveLink:"https://drive.google.com/file/d/16jUT4uOnqhnmHI3jONkyK8oBY-bzqAVu/view"},
   {cat:"AI & Data", title:"Introduction to Data Science", meta:"", driveLink:"https://drive.google.com/file/d/1R6AJsokFKkwncF2RAtvTtYeEI1IUCr41/view"},
   {cat:"AI & Data", title:"Qubits Webinar: Discover AI with Qubits", meta:"May 2026", driveLink:"https://drive.google.com/file/d/1YtggMFgWBPFFxrczt0Dwf06Vd_MW2JYy/view"},
-  {cat:"AI & Data", title:"Microsoft Cloud & AI Frontier Week — Hackathon", meta:"Build & Scale AI Agents with Azure · Participation Badge", file:"certificates/microsoft-ai-frontier-week.jpg", type:"image", driveLink:"https://drive.google.com/file/d/1qxSzPIaO3nSTBlB9-Lf2UUXSwlzuFgr2/view"},
-  {cat:"AI & Data", title:"Investing in Software & AI in the Region", meta:"Riyadh Valley Co. · Apr 2026", file:"certificates/riyadh-valley-ai-investment.pdf", type:"pdf", driveLink:"https://drive.google.com/file/d/1dLscqN0YBWaD1KQ5NRyTiyFXmuqKCIYM/view"},
-  {cat:"AI & Data", title:"Continuous Learning Using AI", meta:"King Abdulaziz University · Mar 2026", file:"certificates/kau-continuous-learning-ai.pdf", type:"pdf", driveLink:"https://drive.google.com/file/d/1oJK09XRxHI19BL56nf9znlP_aZdR2jzP/view"},
-  {cat:"AI & Data", title:"AI and Scientific Research Integrity", meta:"King Abdulaziz University · Mar 2026", file:"certificates/kau-ai-research-integrity.pdf", type:"pdf", driveLink:"https://drive.google.com/file/d/1wsrVjATd2OrFPlolecDrTy5FYiZUWaZg/view"},
-  {cat:"AI & Data", title:"AI Literacy Skills Development", meta:"King Abdulaziz University · Mar 2026", file:"certificates/kau-ai-literacy-skills.pdf", type:"pdf", driveLink:"https://drive.google.com/file/d/1bkCkAzTGJCzefiAu_UYRdaHI4UgA9MjD/view"},
-  {cat:"AI & Data", title:"Data Analysis Roadmap: Zero to Employment", meta:"Twal Training Academy · 2 hrs · Jul 2026", file:"certificates/twal-data-analysis-roadmap.pdf", type:"pdf", driveLink:"https://drive.google.com/file/d/1dNcpW-ydUKLvsueBMpyA_97L-NuvGPXX/view"},
+  {cat:"AI & Data", title:"Microsoft Cloud & AI Frontier Week — Hackathon", meta:"Build & Scale AI Agents with Azure · Participation Badge", driveLink:"https://drive.google.com/file/d/1qxSzPIaO3nSTBlB9-Lf2UUXSwlzuFgr2/view"},
+  {cat:"AI & Data", title:"Investing in Software & AI in the Region", meta:"Riyadh Valley Co. · Apr 2026", driveLink:"https://drive.google.com/file/d/1dLscqN0YBWaD1KQ5NRyTiyFXmuqKCIYM/view"},
+  {cat:"AI & Data", title:"Continuous Learning Using AI", meta:"King Abdulaziz University · Mar 2026", driveLink:"https://drive.google.com/file/d/1oJK09XRxHI19BL56nf9znlP_aZdR2jzP/view"},
+  {cat:"AI & Data", title:"AI and Scientific Research Integrity", meta:"King Abdulaziz University · Mar 2026", driveLink:"https://drive.google.com/file/d/1wsrVjATd2OrFPlolecDrTy5FYiZUWaZg/view"},
+  {cat:"AI & Data", title:"AI Literacy Skills Development", meta:"King Abdulaziz University · Mar 2026", driveLink:"https://drive.google.com/file/d/1bkCkAzTGJCzefiAu_UYRdaHI4UgA9MjD/view"},
+  {cat:"AI & Data", title:"Data Analysis Roadmap: Zero to Employment", meta:"Twal Training Academy · 2 hrs · Jul 2026", driveLink:"https://drive.google.com/file/d/1dNcpW-ydUKLvsueBMpyA_97L-NuvGPXX/view"},
   {cat:"EdTech", title:"Advanced Technological Skills in EdTech", meta:"", driveLink:"https://drive.google.com/file/d/18Hz19Fek2N_VjlvG0C0RU0Xd_yJlv7ha/view"},
   {cat:"EdTech", title:"AI Tools in Teaching Methods", meta:"", driveLink:"https://drive.google.com/file/d/1VMQ9fcFslWpaLqOhURNAFj_Pe0ms3PER/view"},
   {cat:"EdTech", title:"Learning Bridges", meta:"", driveLink:"https://drive.google.com/file/d/1wWCboYOqmA3wzCok5Nu1GkPcwkfMRnvX/view"},
@@ -756,7 +791,7 @@ const certifications = [
   {cat:"EdTech", title:"The Future of Digital Education", meta:"TVTC · 15 hrs · remote", driveLink:"https://drive.google.com/file/d/1TmQk07X6W4J5SNMHV0eR3sxWYueYjVxp/view"},
   {cat:"EdTech", title:"Queen Rania Teacher Academy — Advanced Units", meta:"Computational Thinking & Programming; EdTech Leadership & Vision Planning"},
   {cat:"EdTech", title:"Qubits Webinar: Teach, Assign, and Assess CS & AI", meta:"Apr 2026", driveLink:"https://drive.google.com/file/d/1f9pc9ic4Ww3tOMn7WWtL7UmMLeFPgepC/view"},
-  {cat:"EdTech", title:"Edcafe AI Platform: Practical Applications for Teachers", meta:"AI Solutions · Apr 2026", file:"certificates/edcafe-ai-solutions.pdf", type:"pdf", driveLink:"https://drive.google.com/file/d/1Lhnx-lYDAdtxrPlhH7bGDo7nBg5Zgur4/view"},
+  {cat:"EdTech", title:"Edcafe AI Platform: Practical Applications for Teachers", meta:"AI Solutions · Apr 2026", driveLink:"https://drive.google.com/file/d/1Lhnx-lYDAdtxrPlhH7bGDo7nBg5Zgur4/view"},
   {cat:"Cybersecurity", title:"Introduction to Cyber Security", meta:"Edraak", driveLink:"https://drive.google.com/file/d/1C2oLCqPNTr0p-oJA214sC4XdMirFtfe7/view"},
   {cat:"Cybersecurity", title:"Use GenAI for Software Development", meta:"IBM SkillsBuild · Jul 2025", driveLink:"https://drive.google.com/file/d/133ewXpAHekP9JHTFw1C8lRhk5XQr1wWi/view"},
   {cat:"Cybersecurity", title:"Dark Web — Privacy & Anonymity", meta:"Medoccen Symposium · Oct 2025", driveLink:"https://drive.google.com/file/d/1ujm9UO4orwBxc1xEU6VF5wzFhDg3uo-o/view"},
@@ -820,7 +855,7 @@ const achievements = [
   {h:"English Language Olympiad", p:"Theme: Sports (2025) · Theme: AI (2026).", b:null},
   {h:"NEOM Game-Dev Challenge", p:"2024–2025.", b:null},
   {h:"National Olympiad in Science and Mathematics", p:"NSMO – Informatics track.", b:null},
-  {h:"MakeX Spark 2024–2025", p:"Mentor, Project \"Dar_ALforsan_AIAA\" (Dar Al-Forsan Int'l Schools).", b:"Young Maker Award", file:"certificates/pawtopia-makex-spark.pdf", type:"pdf"},
+  {h:"MakeX Spark 2024–2025", p:"Mentor, Project \"Dar_ALforsan_AIAA\" (Dar Al-Forsan Int'l Schools).", b:"Young Maker Award", driveLink:"https://drive.google.com/file/d/1ZvyhAZXTBUQC6jXk4iY1E7AKGQwEydPn/view"},
   {h:"Classera Ramadan Challenge Competition", p:"Educational competition hosted on the Classera platform.", b:"2024–2025", driveLink:"https://drive.google.com/file/d/1e9330yYlMG-27EKuvgORlqyzaeZD_1xa/view"},
   {h:"Qadam Sihhiya (قدم صحية) — AI Model for Early Prediction of Diabetic Foot Complications", p:"Developed an AI-based predictive model for early detection of diabetic foot injuries and complications.", b:"2nd Place — 3rd Al-Baha International Conference for Endocrinology & Diabetes (Apr 2026)", projectUrl:"https://baste-ebony-72302931.figma.site/"},
 ];
@@ -830,7 +865,7 @@ const projects = [
   {h:"Biometric Vital Signs Robot", p:"Raspberry Pi 5 platform with touch-based sensors."},
   {h:"Smart Assistive Shoe for the Visually Impaired", p:"Arduino, ultrasonic sensors, haptic feedback."},
   {h:"Automated Waste Management Bin", p:"IoT solution with distance sensors and servo motors."},
-  {h:"Pawtopia (MakeX Spark 2024–2025)", p:"Mentored student project by Rofaied Basim Abdulaziz Al-Yousef.", b:"Young Maker Award", file:"certificates/pawtopia-makex-spark.pdf", type:"pdf"},
+  {h:"Pawtopia (MakeX Spark 2024–2025)", p:"Mentored student project by Rofaied Basim Abdulaziz Al-Yousef.", b:"Young Maker Award", driveLink:"https://drive.google.com/file/d/1ZvyhAZXTBUQC6jXk4iY1E7AKGQwEydPn/view"},
 ];
 
 /* ============ RENDER ============ */
