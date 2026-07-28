@@ -352,7 +352,38 @@
     .sb-block{display:none;}
     .hero, section, footer{padding-left:24px; padding-right:24px;}
     .grid2, .cert-grid, .achv-grid{grid-template-columns:1fr;}
+    .hamburger-btn{display:flex;}
   }
+
+  /* ===== MOBILE HAMBURGER NAV ===== */
+  .hamburger-btn{
+    display:none; position:fixed; top:14px; right:14px; z-index:60;
+    width:42px; height:42px; border-radius:10px; border:none;
+    background:var(--navy); flex-direction:column; align-items:center; justify-content:center; gap:5px;
+    cursor:pointer; box-shadow:0 4px 14px rgba(0,0,0,.25);
+  }
+  .hamburger-btn span{width:20px; height:2px; background:#fff; border-radius:2px; transition:all .2s ease;}
+  .hamburger-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger-btn.open span:nth-child(2){opacity:0;}
+  .hamburger-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-nav{
+    display:none; position:fixed; top:0; right:0; bottom:0; width:78%; max-width:320px;
+    background:linear-gradient(180deg,var(--navy) 0%, var(--navy-2) 100%);
+    z-index:55; flex-direction:column; gap:2px; padding:80px 26px 26px;
+    transform:translateX(100%); transition:transform .25s ease;
+    box-shadow:-8px 0 24px rgba(0,0,0,.25);
+  }
+  .mobile-nav.open{display:flex; transform:translateX(0);}
+  .mobile-nav a{
+    color:#EAF1F5; text-decoration:none; font-size:15px; font-weight:600;
+    padding:13px 4px; border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .mobile-nav a:hover{color:var(--gold);}
+  .mobile-nav-overlay{
+    display:none; position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:50;
+  }
+  .mobile-nav-overlay.open{display:block;}
+  @media print{ .hamburger-btn, .mobile-nav, .mobile-nav-overlay{display:none !important;} }
 
   /* ===== PERFORMANCE EVALUATIONS ===== */
   .eval-intro{color:var(--muted); font-size:13.5px; max-width:700px; margin:0 0 22px;}
@@ -483,6 +514,23 @@
 </style>
 </head>
 <body>
+
+<div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="closeMobileNav()"></div>
+
+<button class="hamburger-btn" id="hamburgerBtn" onclick="toggleMobileNav()" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
+<nav class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#competencies" onclick="closeMobileNav()">Core Competencies</a>
+  <a href="#experience" onclick="closeMobileNav()">Experience</a>
+  <a href="#evaluations" onclick="closeMobileNav()">Evaluations</a>
+  <a href="#education" onclick="closeMobileNav()">Education</a>
+  <a href="#certifications" onclick="closeMobileNav()">Certifications</a>
+  <a href="#achievements" onclick="closeMobileNav()">Achievements</a>
+  <a href="#projects" onclick="closeMobileNav()">Student Projects</a>
+  <a href="#gallery" onclick="closeMobileNav()">Gallery</a>
+</nav>
 
 <aside class="sidebar">
   <button class="lang-switch" id="langSwitch" onclick="toggleLang()" aria-label="Toggle Arabic / English">
@@ -793,7 +841,8 @@ const experienceAr = [
       "مساهم فعّال في متطلبات اعتماد التميز المدرسي (ETEC) (2025–2026).",
       "مساهم رئيسي في تجديد وتوثيق الاعتماد الدولي AIAASC.",
       "ساهم في مبادرة التحول الرقمي لمدارس دار الفرسان (#التحول_الرقمي).",
-      "ساهم في بوابة الاعتماد المدرسي والتميز الداعمة لتوثيق اعتماد ETEC."] },
+      "ساهم في بوابة الاعتماد المدرسي والتميز الداعمة لتوثيق اعتماد ETEC.",
+      "تكليف (يوليو 2026) بالعمل ضمن فريق القبول والتسجيل لقسم الدبلوما للعام الأكاديمي القادم 2026–2027 — القيام بأعمال مكتب الإشراف الأكاديمي لقسم الدبلوما، واستقبال أولياء الأمور الراغبين بتسجيل أبنائهم في القسم ومناقشة الجوانب الأكاديمية له، وإجراء اختبارات القبول للطلاب المتقدمين وتحديد مستواهم."] },
   { title:"معلم، مهندس شبكات ودعم فني", org:"مدارس قرطبة الأهلية · جدة", bullets:[] },
   { title:"مسؤول خوادم وشبكات", org:"مجموعة شركات الهدهد · جدة", bullets:[] },
   { title:"مسؤول خوادم وشبكات", org:"مؤسسة الريف لخدمات الأغذية · جدة", bullets:[] },
@@ -917,7 +966,8 @@ const experience = [
      "Actively contributing to ETEC School Excellence Accreditation requirements (2025–2026).",
      "Key contributor to AIAASC international accreditation renewal and documentation.",
      "Contributed to the Dar Al-Forsan Digital Transformation Initiative (#التحول_الرقمي) — a dashboard outlining the school's strategic digital transformation goals through 2027. <a href=\"https://fcoodee.github.io/8.4/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal); font-weight:700;\">View Initiative ↗</a>",
-     "Contributed to the School Accreditation & Excellence Portal supporting Dar Al-Forsan Schools' ETEC accreditation documentation and processes. <a href=\"https://fcoodee.github.io/etec_daralforsan-portal2026/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal); font-weight:700;\">View Portal ↗</a>"]},
+     "Contributed to the School Accreditation & Excellence Portal supporting Dar Al-Forsan Schools' ETEC accreditation documentation and processes. <a href=\"https://fcoodee.github.io/etec_daralforsan-portal2026/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal); font-weight:700;\">View Portal ↗</a>",
+     "Assigned (July 2026) to the Admissions & Registration team for the Diploma Department for the upcoming 2026–2027 academic year — covering Academic Supervision Office duties for the Diploma Department, receiving parents interested in enrolling their children, discussing the program's academic aspects, and administering admission assessments to determine applicants' levels."]},
   {title:"Teacher, Network Engineer & Technical Support", org:"Qurtubah Private Schools · Jeddah", dates:"2023 – 2024",
    bullets:["Delivered instruction in Digital Technology, Data Science, and Artificial Intelligence.",
      "Led scientific innovation programs and international student competitions.",
@@ -1169,7 +1219,24 @@ achievements.forEach(a=>{ achvGrid.innerHTML += achvCard(a); });
 const projGrid = document.getElementById('projGrid');
 projects.forEach(a=>{ projGrid.innerHTML += achvCard(a); });
 
-/* ============ CERTIFICATE ACCESS — PDPL NOTICE + LOGIN GATE ============ */
+/* ============ MOBILE HAMBURGER NAV ============ */
+function toggleMobileNav(){
+  const nav = document.getElementById('mobileNav');
+  const overlay = document.getElementById('mobileNavOverlay');
+  const btn = document.getElementById('hamburgerBtn');
+  const isOpen = nav.classList.toggle('open');
+  overlay.classList.toggle('open', isOpen);
+  btn.classList.toggle('open', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+}
+function closeMobileNav(){
+  document.getElementById('mobileNav').classList.remove('open');
+  document.getElementById('mobileNavOverlay').classList.remove('open');
+  document.getElementById('hamburgerBtn').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+
 // Direct certificate viewing is gated behind a PDPL notice + credential check.
 // Credentials are NOT stored in this file — they are fetched at runtime from
 // PDPL.txt (must sit next to index.html). The original viewer logic is
