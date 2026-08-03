@@ -158,7 +158,7 @@
   /* ===== MAIN ===== */
   main{flex:1; min-width:0; position:relative; overflow:hidden;}
   .hero{
-    position:relative; padding:64px 56px 40px; overflow:hidden;
+    position:relative; padding:64px 56px 40px; overflow:hidden; min-height:480px;
     border-bottom:1px solid var(--line);
   }
   #dsIcon{
@@ -175,7 +175,28 @@
   .hero h1{
     font-size:38px; margin:18px 0 10px; color:var(--navy); font-weight:800; letter-spacing:-.5px;
   }
-  .hero p.lead{max-width:680px; color:var(--muted); font-size:15.5px; line-height:1.7; margin:0;}
+  .hero p.lead{max-width:560px; color:var(--muted); font-size:14.5px; font-weight:600; line-height:1.75; margin:0;}
+
+  .side-project-card{
+    position:absolute; top:130px; right:56px; width:300px;
+    background:#fff; border:2px solid var(--teal); border-radius:16px;
+    padding:20px 22px; box-shadow:0 12px 30px rgba(0,102,131,.15); z-index:1;
+  }
+  .side-project-tag{
+    display:inline-block; background:rgba(0,102,131,.1); color:var(--teal);
+    font-size:10.5px; font-weight:700; padding:4px 10px; border-radius:100px; margin-bottom:10px;
+  }
+  .side-project-card h4{margin:0 0 8px; font-size:16px; color:var(--navy); font-weight:800;}
+  .side-project-card p{margin:0 0 14px; font-size:12px; color:var(--muted); line-height:1.65;}
+  .side-project-btn{
+    display:inline-flex; align-items:center; gap:6px; background:var(--teal); color:#fff;
+    font-size:12px; font-weight:700; padding:8px 16px; border-radius:100px; text-decoration:none;
+  }
+  .side-project-btn:hover{background:var(--navy);}
+  @media (max-width:1200px){ .side-project-card{position:static; width:auto; margin-top:20px;} }
+  @media (max-width:900px){ .side-project-card{display:none;} }
+  @media print{ .side-project-card{display:none;} }
+  body.lang-ar .side-project-card{ right:auto; left:56px; }
 
   /* ===== PLATFORM LOGO STRIP ===== */
   .platform-strip{padding:22px 56px 6px;}
@@ -633,6 +654,13 @@
     <span class="eyebrow" id="i18n-eyebrow">Computer Science &amp; IT Educator</span>
     <h1 id="i18n-h1"><span dir-ignore>FAHAD A. ALSUFYANI</span></h1>
     <p class="lead" id="i18n-lead">Computer Science and technology educator with 15+ years of combined experience across high-tech IT environments and K–12 education — a solid, field-tested foundation underpinning a strong academic path in teaching today. Currently teaching Computer Science, ICT, Robotics, and Artificial Intelligence from Grade 4 through Grade 12, driven by a genuine passion for embedding AI education progressively across the full K–12 continuum. A committed advocate for digital transformation as a driver of quality of life, with unwavering dedication to responsible AI, AI ethics, and digital citizenship — in direct alignment with the goals of Saudi Vision 2030. Proven record in curriculum development and cultivating a positive learning environment, bringing rare technical depth in networking, databases, and systems into the classroom for hands-on, industry-relevant instruction in AI, IoT, and emerging technologies.</p>
+
+    <div class="side-project-card">
+      <span class="side-project-tag">🚀 Featured Project</span>
+      <h4>Beyond<span style="color:var(--orange);">#</span>Computer_Science</h4>
+      <p id="i18n-sideproject-desc">An ambitious educational-technical project retelling the history of computing through a visual storyboard narrative instead of traditional academic prose. Nine integrated pages — from the physics of the bit and transistor to the evolution of programming languages, communications, and big data, through to the history and present of AI — each built as a bilingual (AR/EN) multi-track swimlane timeline, sourced entirely from verified official references. It closes with an "Outlook" section connecting every page to real institutional forecasts (IBM, Gartner, NIST) for the years beyond 2026.</p>
+      <a href="https://fcoodee.github.io/BeyondCS/" target="_blank" rel="noopener" class="side-project-btn" id="i18n-sideproject-btn">Visit Project ↗</a>
+    </div>
   </div>
 
   <div class="platform-strip">
@@ -826,6 +854,8 @@ const i18n = {
   'i18n-lang-en': 'الإنجليزية — طلاقة',
   'i18n-dlbtn': 'تحميل / طباعة السيرة',
   'i18n-lastupdated': 'آخر تحديث: 27 يوليو 2026',
+  'i18n-sideproject-desc': 'مشروع تعليمي-تقني طموح يُعيد سرد تاريخ الحوسبة بأسلوب بصري قصصي (Storyboard Narrative) بدل السرد الأكاديمي التقليدي. يغطي المشروع تسع صفحات متكاملة — من فيزياء البت والترانزستور، إلى تطور لغات البرمجة والاتصالات والبيانات الضخمة، وصولاً لتاريخ الذكاء الاصطناعي وحاضره. كل صفحة مبنية على نمط الخط الزمني متعدد المسارات، ثنائية اللغة بالكامل، وموثّقة بمصادر رسمية محقّقة فعلياً. يختتم المشروع بقسم "الترقّب" الذي يربط كل الصفحات باستشرافات مؤسسية حقيقية (IBM، Gartner، NIST) لما بعد 2026.',
+  'i18n-sideproject-btn': 'زيارة المشروع ↗',
   'i18n-eyebrow': 'مُدرّس علوم الحاسوب وتكنولوجيا المعلومات',
   'i18n-platform-label': 'دعم منصات التعلم الرقمي الذكية',
   'i18n-h-comp': 'الكفاءات الأساسية',
