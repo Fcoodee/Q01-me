@@ -146,7 +146,7 @@
   body.lang-ar main{ order:1; }
   body.lang-ar .sb-contact a, body.lang-ar .sb-contact span{ flex-direction:row-reverse; justify-content:flex-end; }
   body.lang-ar .hero{ text-align:right; }
-  body.lang-ar #dsIcon{ right:auto; left:610px; }
+  body.lang-ar #dsIcon{ right:auto; left:420px; }
   body.lang-ar .comp-cols{ direction:rtl; }
   body.lang-ar .timeline{ direction:rtl; }
   body.lang-ar .eval-quarters, body.lang-ar .stat-row, body.lang-ar .gal-tags{ direction:rtl; }
@@ -158,11 +158,11 @@
   /* ===== MAIN ===== */
   main{flex:1; min-width:0; position:relative; overflow:hidden;}
   .hero{
-    position:relative; padding:64px 56px 40px; overflow:hidden; min-height:480px;
+    position:relative; padding:64px 56px 40px; overflow:hidden; min-height:560px;
     border-bottom:1px solid var(--line);
   }
   #dsIcon{
-    position:absolute; top:70px; right:610px; width:170px; height:auto;
+    position:absolute; top:55px; right:420px; width:150px; height:auto;
     opacity:.9; z-index:0; pointer-events:none;
   }
   @media (max-width:900px){ #dsIcon{ display:none; } }
@@ -178,7 +178,7 @@
   .hero p.lead{max-width:560px; color:var(--muted); font-size:14.5px; font-weight:600; line-height:1.75; margin:0;}
 
   .side-project-card{
-    position:absolute; top:70px; right:56px; width:300px;
+    position:absolute; top:45px; right:56px; width:300px;
     background:#0B1A2E;
     background-image:
       linear-gradient(rgba(122,162,255,.12) 1px, transparent 1px),
@@ -194,11 +194,10 @@
     font-family:"Segoe UI", Tahoma, sans-serif;
   }
   .side-project-card h4{
-    margin:0 0 10px; font-size:19px; font-weight:800; letter-spacing:.3px;
-    background:linear-gradient(90deg, #F5B54A, #E48FA8);
-    -webkit-background-clip:text; background-clip:text; color:transparent;
+    margin:0 0 10px; font-size:15px; font-weight:800; letter-spacing:.2px;
+    color:#fff; white-space:normal; word-break:break-word; line-height:1.3;
   }
-  .side-project-card p{margin:0 0 14px; font-size:11.5px; color:#8FD6E8; line-height:1.7;}
+  .side-project-card p{margin:0 0 14px; font-size:10.5px; color:#8FD6E8; line-height:1.65;}
   .side-project-btn{
     display:inline-flex; align-items:center; gap:6px; background:linear-gradient(90deg, #F5B54A, #E48FA8); color:#0B1A2E;
     font-size:12px; font-weight:800; padding:8px 16px; border-radius:100px; text-decoration:none;
