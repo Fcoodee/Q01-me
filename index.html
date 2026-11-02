@@ -455,6 +455,18 @@
   .mobile-nav-overlay.open{display:block;}
   @media print{ .hamburger-btn, .mobile-nav, .mobile-nav-overlay{display:none !important;} }
 
+
+  /* ===== 2026-2027 UPDATES — neon glow ===== */
+  .upd-badge{display:inline-block; margin:0 10px; vertical-align:middle; font-size:10.5px; font-weight:800; letter-spacing:.6px;
+    color:#052B22; background:#7CE8A0; padding:3px 11px; border-radius:100px;
+    box-shadow:0 0 6px #7CE8A0, 0 0 14px rgba(124,232,160,.85), 0 0 26px rgba(0,255,170,.55);
+    animation:neonPulse 2.2s ease-in-out infinite alternate;}
+  .tl-details li.new-upd{list-style:none; margin:8px 0; padding:10px 14px; border-radius:10px;
+    background:rgba(124,232,160,.12); border:1px solid #38E8A0;
+    box-shadow:0 0 6px rgba(56,232,160,.9), 0 0 16px rgba(56,232,160,.55), inset 0 0 10px rgba(124,232,160,.25);
+    animation:neonPulse 2.6s ease-in-out infinite alternate;}
+  @keyframes neonPulse{from{filter:brightness(1);}to{filter:brightness(1.12) saturate(1.2);}}
+  @media (prefers-reduced-motion: reduce){ .upd-badge, .tl-details li.new-upd{animation:none;} }
   /* ===== PERFORMANCE EVALUATIONS ===== */
   .eval-intro{color:var(--muted); font-size:13.5px; max-width:700px; margin:0 0 22px;}
   .eval-year-block{
@@ -955,10 +967,10 @@ const experienceAr = [
       "ساهم في مبادرة التحول الرقمي لمدارس دار الفرسان (#التحول_الرقمي).",
       "ساهم في بوابة الاعتماد المدرسي والتميز الداعمة لتوثيق اعتماد ETEC.",
       "تكليف (يوليو 2026) بالعمل ضمن فريق القبول والتسجيل لقسم الدبلوما للعام الأكاديمي القادم 2026–2027 — القيام بأعمال مكتب الإشراف الأكاديمي لقسم الدبلوما، واستقبال أولياء الأمور الراغبين بتسجيل أبنائهم في القسم ومناقشة الجوانب الأكاديمية له، وإجراء اختبارات القبول للطلاب المتقدمين وتحديد مستواهم.",
-      "تجديد التكليف بملف التميز المدرسي (ETEC) للعام الدراسي 2026–2027 (سبتمبر 2026).",
-      "تكليف بمهام مدير نظام Classera (LMS) للعام الدراسي الجديد (سبتمبر 2026) — إعداد المنصة والدعم الفني لحسابات المعلمين والطلاب وأولياء الأمور والإدارة التعليمية والإشراف الأكاديمي للقسم.",
-      "تكليف من مدير المدرسة بتصميم وبرمجة وإدارة تطبيق ويب لإصدار تقارير الأداء السلوكي والأكاديمي للعام الحالي، يخدم جميع أقسام المدرسة (الابتدائي والمتوسط والثانوي). الجانب الهندسي: صلاحيات قائمة على الأدوار مع عزل المراحل (موجه / وكيل / مدير / مدير نظام)؛ ودورة حياة التقرير كآلة حالات (مسودة ← مُرسَل ← مُراجَع ← معتمد ← منشور) تُحدَّد فيها الانتقالات المسموحة لكل دور ويُشترط سبب مكتوب للإعادة إلى المسودة؛ والتحقق من المدخلات (حدود 4 نقاط قوة / 4 تحسين / 3 توصيات، وعبارة مخصصة ≤120 حرفًا، وتخزين لقطة النص لا مرجعها)؛ وتجميع إنجاز كل مرحلة للمتابعة؛ وسجل تدقيق؛ وإخراج A4 للطباعة. تصميم الخلفية: Google Sheets مع Apps Script وأقفال لمنع تعارض الكتابة المتزامنة. النسخة الحالية تجريبية ببيانات افتراضية (لا بيانات حقيقية في المستودع). <a href=\"https://fcoodee.github.io/dar-alforsan-behavior-reports/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal); font-weight:700;\">عرض التطبيق ↗</a>",
-      "بناء تطبيق ويب لإدارة أزمة انقطاع قاعدة بيانات Classera (القسم الابتدائي، الأسبوع 10) يتيح وصولًا مؤقتًا إلى الخطة الدراسية لقسم الدبلوما. الجانب الهندسي: مصفوفة (صف × يوم × فترة) بمفتاح لكل خلية؛ وحفظ تلقائي مؤجَّل (800 م.ث) مع أعلام قيد التنفيذ/متغيّر لتفادي تعارض الكتابة؛ واستطلاع كل 15 ثانية يوفّق حالة الخادم دون الكتابة فوق خلية قيد التحرير؛ وفرض الصلاحية في الخادم حسب المادة والصف برموز أدوار وقفل الأسبوع؛ وكشف الفجوات بتجميع الحصص التي ينقصها موضوع الدرس وصياغة رسالة متابعة للمعلمين؛ وتصدير بنقرة (Word من القالب المعتمد وCSV وطباعة PDF). <a href=\"https://fcoodee.github.io/weekly-plan-v10/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal); font-weight:700;\">عرض التطبيق ↗</a>"] },
+      "@@new@@تجديد التكليف بملف التميز المدرسي (ETEC) للعام الدراسي 2026–2027 (سبتمبر 2026).",
+      "@@new@@تكليف بمهام مدير نظام Classera (LMS) للعام الدراسي الجديد (سبتمبر 2026) — إعداد المنصة والدعم الفني لحسابات المعلمين والطلاب وأولياء الأمور والإدارة التعليمية والإشراف الأكاديمي للقسم.",
+      "@@new@@تكليف من مدير المدرسة بتصميم وبرمجة وإدارة تطبيق ويب لإصدار تقارير الأداء السلوكي والأكاديمي للعام الحالي، يخدم جميع أقسام المدرسة (الابتدائي والمتوسط والثانوي). الجانب الهندسي: صلاحيات قائمة على الأدوار مع عزل المراحل (موجه / وكيل / مدير / مدير نظام)؛ ودورة حياة التقرير كآلة حالات (مسودة ← مُرسَل ← مُراجَع ← معتمد ← منشور) تُحدَّد فيها الانتقالات المسموحة لكل دور ويُشترط سبب مكتوب للإعادة إلى المسودة؛ والتحقق من المدخلات (حدود 4 نقاط قوة / 4 تحسين / 3 توصيات، وعبارة مخصصة ≤120 حرفًا، وتخزين لقطة النص لا مرجعها)؛ وتجميع إنجاز كل مرحلة للمتابعة؛ وسجل تدقيق؛ وإخراج A4 للطباعة. تصميم الخلفية: Google Sheets مع Apps Script وأقفال لمنع تعارض الكتابة المتزامنة. النسخة الحالية تجريبية ببيانات افتراضية (لا بيانات حقيقية في المستودع). <a href=\"https://fcoodee.github.io/dar-alforsan-behavior-reports/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal); font-weight:700;\">عرض التطبيق ↗</a>",
+      "@@new@@بناء تطبيق ويب لإدارة أزمة انقطاع قاعدة بيانات Classera (القسم الابتدائي، الأسبوع 10) يتيح وصولًا مؤقتًا إلى الخطة الدراسية لقسم الدبلوما. الجانب الهندسي: مصفوفة (صف × يوم × فترة) بمفتاح لكل خلية؛ وحفظ تلقائي مؤجَّل (800 م.ث) مع أعلام قيد التنفيذ/متغيّر لتفادي تعارض الكتابة؛ واستطلاع كل 15 ثانية يوفّق حالة الخادم دون الكتابة فوق خلية قيد التحرير؛ وفرض الصلاحية في الخادم حسب المادة والصف برموز أدوار وقفل الأسبوع؛ وكشف الفجوات بتجميع الحصص التي ينقصها موضوع الدرس وصياغة رسالة متابعة للمعلمين؛ وتصدير بنقرة (Word من القالب المعتمد وCSV وطباعة PDF). <a href=\"https://fcoodee.github.io/weekly-plan-v10/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal); font-weight:700;\">عرض التطبيق ↗</a>"] },
   { title:"معلم، مهندس شبكات ودعم فني", org:"مدارس قرطبة الأهلية · جدة", bullets:[] },
   { title:"مسؤول خوادم وشبكات", org:"مجموعة شركات الهدهد · جدة", bullets:[] },
   { title:"مسؤول خوادم وشبكات", org:"مؤسسة الريف لخدمات الأغذية · جدة", bullets:[] },
@@ -1084,10 +1096,10 @@ const experience = [
      "Contributed to the Dar Al-Forsan Digital Transformation Initiative (#التحول_الرقمي) — a dashboard outlining the school's strategic digital transformation goals through 2027. <a href=\"https://fcoodee.github.io/8.4/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal); font-weight:700;\">View Initiative ↗</a>",
      "Contributed to the School Accreditation & Excellence Portal supporting Dar Al-Forsan Schools' ETEC accreditation documentation and processes. <a href=\"https://fcoodee.github.io/etec_daralforsan-portal2026/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal); font-weight:700;\">View Portal ↗</a>",
      "Assigned (July 2026) to the Admissions & Registration team for the Diploma Department for the upcoming 2026–2027 academic year — covering Academic Supervision Office duties for the Diploma Department, receiving parents interested in enrolling their children, discussing the program's academic aspects, and administering admission assessments to determine applicants' levels.",
-     "Renewed assignment on the ETEC School Excellence file for the 2026–2027 academic year (Sept 2026).",
-     "Assigned as Classera LMS System Administrator for the new academic year (Sept 2026) — platform setup and technical support for the accounts of teachers, students, parents, section educational administration, and section academic supervision.",
-     "Assigned by the Principal to design, program and manage a web app generating behavioral & academic performance reports for the current year, serving all school sections (primary, middle, secondary). Engineering: role-based access control with stage isolation (counselor / deputy / principal / system admin); a report lifecycle modeled as a state machine (Draft → Submitted → Reviewed → Approved → Published) where each transition is permitted per role and a return to draft requires a written reason; input validation (caps of 4 strengths / 4 improvements / 3 recommendations, custom phrases ≤120 chars, text snapshots rather than references); per-stage progress aggregation for follow-up dashboards; an audit log; and A4 print output. Backend design: Google Sheets + Apps Script with script locks against concurrent writes. The current build is a pilot on simulated data (no real student data in the repository). <a href=\"https://fcoodee.github.io/dar-alforsan-behavior-reports/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal); font-weight:700;\">View App ↗</a>",
-     "Built a crisis-management web app after the Classera database outage (primary section, week 10), giving temporary access to the weekly study plan for the Diploma Department. Engineering: a Grade × Day × Period matrix keyed per cell; debounced auto-save (800 ms) with in-flight/dirty flags to avoid write races; 15-second polling that reconciles server state without overwriting cells being edited; server-enforced access by subject + grade through per-role tokens and a week lock; gap detection that groups periods missing a lesson topic and drafts follow-up messages to teachers; and one-click exports (Word from the approved template, CSV, print-to-PDF). <a href=\"https://fcoodee.github.io/weekly-plan-v10/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal); font-weight:700;\">View App ↗</a>"]},
+     "@@new@@Renewed assignment on the ETEC School Excellence file for the 2026–2027 academic year (Sept 2026).",
+     "@@new@@Assigned as Classera LMS System Administrator for the new academic year (Sept 2026) — platform setup and technical support for the accounts of teachers, students, parents, section educational administration, and section academic supervision.",
+     "@@new@@Assigned by the Principal to design, program and manage a web app generating behavioral & academic performance reports for the current year, serving all school sections (primary, middle, secondary). Engineering: role-based access control with stage isolation (counselor / deputy / principal / system admin); a report lifecycle modeled as a state machine (Draft → Submitted → Reviewed → Approved → Published) where each transition is permitted per role and a return to draft requires a written reason; input validation (caps of 4 strengths / 4 improvements / 3 recommendations, custom phrases ≤120 chars, text snapshots rather than references); per-stage progress aggregation for follow-up dashboards; an audit log; and A4 print output. Backend design: Google Sheets + Apps Script with script locks against concurrent writes. The current build is a pilot on simulated data (no real student data in the repository). <a href=\"https://fcoodee.github.io/dar-alforsan-behavior-reports/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal); font-weight:700;\">View App ↗</a>",
+     "@@new@@Built a crisis-management web app after the Classera database outage (primary section, week 10), giving temporary access to the weekly study plan for the Diploma Department. Engineering: a Grade × Day × Period matrix keyed per cell; debounced auto-save (800 ms) with in-flight/dirty flags to avoid write races; 15-second polling that reconciles server state without overwriting cells being edited; server-enforced access by subject + grade through per-role tokens and a week lock; gap detection that groups periods missing a lesson topic and drafts follow-up messages to teachers; and one-click exports (Word from the approved template, CSV, print-to-PDF). <a href=\"https://fcoodee.github.io/weekly-plan-v10/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal); font-weight:700;\">View App ↗</a>"]},
   {title:"Teacher, Network Engineer & Technical Support", org:"Qurtubah Private Schools · Jeddah", dates:"2023 – 2024",
    bullets:["Delivered instruction in Digital Technology, Data Science, and Artificial Intelligence.",
      "Led scientific innovation programs and international student competitions.",
@@ -1277,7 +1289,7 @@ function renderExperience(){
       <div class="tl-card" onclick="this.classList.toggle('open')">
         <div class="tl-head">
           <div>
-            <h3>${title}</h3>
+            <h3>${title}${i===0?`<span class="upd-badge" dir-ignore>2026 - 2027 Updates</span>`:''}</h3>
             <div class="tl-org">${org}</div>
           </div>
           <div style="display:flex; align-items:center; gap:8px;">
@@ -1285,7 +1297,7 @@ function renderExperience(){
             <span class="tl-chevron">▶</span>
           </div>
         </div>
-        <div class="tl-details"><ul>${bullets.map(b=>`<li>${b}</li>`).join('')}</ul></div>
+        <div class="tl-details"><ul>${bullets.map(b=>b.startsWith('@@new@@')?`<li class="new-upd">${b.slice(7)}</li>`:`<li>${b}</li>`).join('')}</ul></div>
       </div>
     </div>`;
   }).join('');
