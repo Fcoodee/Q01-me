@@ -82,6 +82,12 @@
     font-weight:700;font-size:26px;color:var(--navy);
     box-shadow:0 0 0 4px rgba(255,255,255,.12);
   }
+  .avatar-upd{margin-top:-8px; align-self:flex-start;}
+  .avatar-upd span{display:inline-block; white-space:nowrap; font-size:12px; font-weight:800; letter-spacing:.7px; color:#052B22; background:#7CE8A0;
+    padding:6px 16px; border-radius:100px; box-shadow:0 0 6px rgba(124,232,160,.95), 0 0 14px rgba(56,232,160,.45);
+    animation:neonPulse 2.4s ease-in-out infinite alternate;}
+  body.lang-ar .avatar-upd{align-self:flex-end;}
+  @media (prefers-reduced-motion: reduce){ .avatar-upd span{animation:none;} }
   .avatar img{width:70px;height:70px;border-radius:50%;object-fit:cover;display:block;}
   .avatar span{background:#fff;border-radius:50%;width:70px;height:70px;display:flex;align-items:center;justify-content:center;}
   .sb-name{font-size:20px;font-weight:700;line-height:1.3;margin:0;}
@@ -654,6 +660,7 @@
       </p>
     </div>
   </div>
+  <div class="avatar-upd" dir-ignore><span>2026 - 2027 Updates</span></div>
 
   <div class="sb-contact">
     <span id="i18n-location">📍 Jeddah — KSA</span>
